@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Harry's News</title>
+    <style>
+        body {
+            font-family: Arial;
+            text-align: center;
+            background-color: #111;
+            color: white;
+            margin-top: 100px;
+        }
+        h1 {
+            font-size: 50px;
+        }
+        p {
+            font-size: 20px;
+            color: gray;
+        }
+        button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 16px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Harry's News</h1>
+
+    <p id="news">Loading news...</p>
+
+    <button onclick="refreshNews()">Refresh</button>
+
+    <script>
+        function loadNews() {
+            document.getElementById("news").innerText = "Loading news...";
+            
+            setTimeout(() => {
+                document.getElementById("news").innerText =
+                "There's no news currently. Sorry!";
+            }, 2000);
+        }
+
+        function refreshNews() {
+            loadNews();
+        }
+
+        // Load on start
+        loadNews();
+    </script>
+
+</body>
+</html>
