@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Harry's News - The Most Useless News Site Ever</title>
+
+    <meta name="description" content="Breaking news: There is no news. The most useless and funny website to visit when you're bored.">
+    <meta name="keywords" content="funny websites, useless websites, bored, random sites, Harry's News, useless">
+
+    <style>
+        body {
+            font-family: Arial;
+            text-align: center;
+            background-color: #111;
+            color: white;
+            margin: 50px;
+        }
+
+        h1 {
+            font-size: 50px;
+        }
+
+        h2 {
+            margin-top: 40px;
+        }
+
+        p {
+            font-size: 18px;
+            color: gray;
+        }
+
+        button {
+            margin-top: 20px;
+            padding: 12px 20px;
+            font-size: 16px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+
+        .box {
+            border: 1px solid #333;
+            padding: 20px;
+            margin: 20px auto;
+            width: 60%;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Harry's News</h1>
+    <p>The most useless news site on the internet.</p>
+
+    <div class="box">
+        <h2>Breaking News</h2>
+        <p id="news">Loading breaking news...</p>
+        <button onclick="refreshNews()">Check Again</button>
+    </div>
+
+    <div class="box">
+        <h2>Latest Updates</h2>
+        <p>Still no news.</p>
+    </div>
+
+    <div class="box">
+        <h2>World News</h2>
+        <p>Nothing happened today.</p>
+    </div>
+
+    <div class="box">
+        <h2>Why this site exists</h2>
+        <p>This is one of the most useless and (hopefully) funny websites to visit when you're bored.</p>
+    </div>
+
+    <script>
+        function loadNews() {
+            document.getElementById("news").innerText = "Loading breaking news...";
+
+            setTimeout(() => {
+                const messages = [
+                    "There's no news currently. Sorry! Maybe refresh?",
+                    "Breaking News: Still nothing happened. Maybe refresh?",
+                    "Update: absolutely nothing. Maybe refresh?",
+                    "We checked again. Absolutely no news. Maybe refresh?",
+                    "Nothing is happening right now. Maybe refresh?"
+                ];
+
+                const random = messages[Math.floor(Math.random() * messages.length)];
+                document.getElementById("news").innerText = random;
+            }, 1500);
+        }
+
+        function refreshNews() {
+            loadNews();
+        }
+
+        loadNews();
+    </script>
+
+</body>
+</html>
